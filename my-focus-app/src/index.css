@@ -18,7 +18,7 @@
 }
 
 /* ---------------------------------------------------
-   DARK THEME (auto applied when data-theme="dark")
+   DARK THEME
 --------------------------------------------------- */
 :root[data-theme="dark"] {
   --primary: #6b8aff;
@@ -44,10 +44,8 @@ body {
 }
 
 /* ---------------------------------------------------
-   GENERAL UTILITY HELPERS
+   CARDS & BUTTONS
 --------------------------------------------------- */
-
-/* Card style */
 .card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -55,7 +53,6 @@ body {
   box-shadow: var(--shadow);
 }
 
-/* Primary Button */
 .btn-primary {
   background: var(--primary);
   color: #fff;
@@ -69,8 +66,43 @@ body {
   opacity: 0.9;
 }
 
-/* Subtle hover effect */
 .hover-card:hover {
   transform: translateY(-2px);
   transition: 0.2s;
+}
+
+/* ---------------------------------------------------
+   TASK ITEM
+--------------------------------------------------- */
+.task-item {
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.delete-btn:hover {
+  opacity: 1;
+  color: var(--primary);
+}
+
+/* ---------------------------------------------------
+   INPUT FIX FOR DARK MODE (IMPORTANT)
+--------------------------------------------------- */
+input,
+textarea,
+select {
+  background: var(--card) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  caret-color: var(--text) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text);
+  opacity: 0.6;
+}
+
+/* Chrome autofill fix */
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px var(--card) inset !important;
+  -webkit-text-fill-color: var(--text) !important;
 }
