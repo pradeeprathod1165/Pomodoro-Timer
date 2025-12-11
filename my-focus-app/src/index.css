@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------
+   LIGHT THEME (default)
+--------------------------------------------------- */
+:root {
+  --primary: #4a6cf7;
+  --primary-light: #dde5ff;
+
+  --bg: #eef2ff;
+  --card: #ffffff;
+  --text: #1a1a1a;
+
+  --border: rgba(0, 0, 0, 0.12);
+  --shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------------------------------------------------
+   DARK THEME (auto applied when data-theme="dark")
+--------------------------------------------------- */
+:root[data-theme="dark"] {
+  --primary: #6b8aff;
+  --primary-light: #2a355a;
+
+  --bg: #0f172a;
+  --card: #15213b;
+  --text: #e6eefc;
+
+  --border: rgba(255, 255, 255, 0.12);
+  --shadow: 0px 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------------------------------------------------
+   GLOBAL BODY STYLES
+--------------------------------------------------- */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.2px;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* ---------------------------------------------------
+   GENERAL UTILITY HELPERS
+--------------------------------------------------- */
+
+/* Card style */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+/* Primary Button */
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* Subtle hover effect */
+.hover-card:hover {
+  transform: translateY(-2px);
+  transition: 0.2s;
+}
