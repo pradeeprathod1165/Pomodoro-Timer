@@ -43,7 +43,7 @@ export default function AuthModal({ onClose, onAuth }) {
 
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50">
-      <div className="bg-white p-6 rounded-xl w-full max-w-sm shadow-xl">
+      <div className="bg-white/60 p-6 rounded-xl w-full max-w-sm shadow-xl">
         <h2 className="text-2xl font-semibold mb-4 text-center">
           {isLogin ? "Login" : "Create Account"}
         </h2>
