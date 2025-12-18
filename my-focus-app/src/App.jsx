@@ -7,6 +7,7 @@ import AuthModal from "./components/AuthModal";
 import { supabase } from "./supabase";
 import useTheme from "./hooks/useTheme";
 import "./index.css";
+import logo from "../src/assets/focusflow.png";
 
 const STORAGE_KEY = "focus_app_settings";
 const TASK_KEY = "focus_active_task";
@@ -132,9 +133,11 @@ export default function App() {
       style={{ backgroundColor: "var(--bg)", color: "var(--text)" }}
     >
       {/* HEADER */}
-      <div className="mb-6 flex items-center gap-4">
+      <div className="mb-6 flex items-center gap-1">
+        <img src={logo} alt="FocusFlow logo" className="h-12 w-12" />
+
         <h1 className="text-3xl font-bold" style={{ color: "var(--primary)" }}>
-          Focus Timer
+          FocusFlow
         </h1>
 
         {/* Theme toggle */}
@@ -186,8 +189,8 @@ export default function App() {
           />
         </div>
       )}
-     
-     { /* TASKS: works offline, syncs only when logged in */}
+
+      {/* TASKS: works offline, syncs only when logged in */}
       <div className="mt-10">
         <TaskList user={user} onUseTask={setActiveTaskId} />
 
@@ -197,7 +200,7 @@ export default function App() {
           </p>
         )}
       </div>
-      
+
       {/* STATS */}
       <div className="mt-10">
         <Stats />
