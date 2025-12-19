@@ -129,7 +129,7 @@ export default function App() {
 
   return (
     <div
-      className="w-full min-h-screen flex flex-col items-center py-10"
+      className="w-full min-h-screen flex flex-col items-center py-3"
       style={{ backgroundColor: "var(--bg)", color: "var(--text)" }}
     >
       {/* HEADER */}
@@ -139,7 +139,12 @@ export default function App() {
         <h1 className="text-3xl font-bold" style={{ color: "var(--primary)" }}>
           FocusFlow
         </h1>
+      </div>
 
+      <div
+        className="flex flex-row items-center py-3 mt--5 gap-2"
+        style={{ backgroundColor: "var(--bg)", color: "var(--text)" }}
+      >
         {/* Theme toggle */}
         <button
           onClick={() => setTheme(theme === "light" ? "dark" : "light")}
@@ -173,6 +178,7 @@ export default function App() {
           </button>
         )}
       </div>
+
       {/* TIMER */}
       <Timer
         defaults={defaults}
